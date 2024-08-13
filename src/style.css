@@ -1,0 +1,1309 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&family=Lato:wght@100;300;400;700;900&family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Hammersmith+One&family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&family=Playfair+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0px auto;
+}
+
+/* -- -- -- -- --
+search component 
+-- -- -- -- -- -- -- */
+.search-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20%;
+    width: 100%;
+    max-width: 99%;
+    height: auto;
+    margin: 0.5% 0%;
+    z-index: 99999999999;
+}
+
+.search-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.search-inputs input {
+    height: 3.5em;
+    font-size: 1em;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5em;
+    color: #101415;
+    width: 100%;
+    max-width: 79%;
+    border: none;
+    box-shadow: 0 3px 12px rgba(75, 75, 75, 0.518);
+}
+
+.search-inputs input:focus {
+    outline: none;
+}
+
+.dataResult {
+    width: 70%;
+    position: absolute;
+    background-color: #ffffffc1;
+    top: 55px;
+    box-shadow: 0 3px 12px rgba(75, 75, 75, 0.518);
+}
+
+.results {
+    margin: 1%;
+}
+
+.results p {
+    font-size: 1.2em;
+    font-family: 'Lato';
+    color: #101415;
+    line-height: 1.75;
+}
+
+.results p:hover {
+    font-size: 1.2em;
+    font-family: 'Lato';
+    color: #484c4d;
+    font-weight: 500;
+}
+
+/* -------------
+main weather
+---------------- */
+.search-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20%;
+    width: 100%;
+    max-width: 99%;
+    height: auto;
+    margin: 0.5% 0%;
+    z-index: 99999999999;
+}
+
+.search-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.search-inputs input {
+    height: 3.5em;
+    font-size: 1em;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5em;
+    color: #101415;
+    width: 100%;
+    max-width: 79%;
+    border: none;
+    box-shadow: 0 3px 12px rgba(75, 75, 75, 0.518);
+}
+
+.search-inputs input:focus {
+    outline: none;
+}
+
+.dataResult {
+    width: 70%;
+    position: absolute;
+    background-color: #ffffffc1;
+    top: 55px;
+    box-shadow: 0 3px 12px rgba(75, 75, 75, 0.518);
+}
+
+.results {
+    margin: 1%;
+}
+
+.results p {
+    font-size: 1.2em;
+    font-family: 'Lato';
+    color: #101415;
+    line-height: 1.75;
+}
+
+.results p:hover {
+    font-size: 1.2em;
+    font-family: 'Lato';
+    color: #484c4d;
+    font-weight: 500;
+}
+
+.alerts-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-height: 500px;
+    height: fit-content;
+    width: auto;
+    max-width: 95%;
+    position: absolute;
+    top: 15%;
+    border: 1px solid #727272;
+    background-color: #edededd5;
+    position: absolute;
+    z-index: 999999999;
+    overflow: scroll;
+}
+
+.close-btn {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    text-align: right;
+    position: absolute;
+    right: 2%;
+    top: 9%;
+    margin: 0.25%;
+    z-index: 9999999999999;
+}
+
+.close-btn button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border: 0.5px solid #acacac;
+}
+
+.close-btn button:hover {
+    background-color: #ededed64;
+}
+
+
+.alerts-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 2;
+    margin: 1%;
+    width: auto;
+    margin: 0 auto;
+    max-width: 95%;
+    width: 100%;
+    font-family: "Roboto Mono", monospace;
+}
+
+.alerts-content h3 {
+    font-size: 2em;
+}
+
+.alerts-content p {
+    color: #000;
+    font-size: 1.25em;
+    max-width: 95%;
+}
+
+.fade-bg {
+    background-color: #d8d8d85e;
+}
+
+.bg-normal {
+    background-color: #fdfcf73f;
+    background-color: #fdfcf73f;
+}
+
+/* -------------------
+| Current Conditions
+---------------------- */
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5%;
+    max-width: 99%;
+    height: auto;
+    position: relative;
+    font-family: 'Figtree';
+}
+
+.main-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    max-height: 99%;
+    width: 100%;
+    max-width: 99%;
+    margin: 0.5% 0%;
+    position: relative;
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+    background-color: #6767675b;
+    color: #1d1c28;
+    border-radius: 5px;
+    margin-top: 10%;
+    font-family: 'Figtree';
+}
+
+.img-container {
+    width: 100%;
+    max-width: 98%;
+    height: 100%;
+    max-height: 98%;
+    position: absolute;
+    z-index: 6000;
+    top: 1%;
+    left: 1%;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- --- --- --- --- ---
+\\  MAIN CONDITIONS
+
+--- --- --- --- --- --- */
+.conditions-current {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    width: 100%;
+    max-width: 99%;
+    height: auto;
+    margin: 1% 0%;
+    color: #fff;
+    font-family: 'Figtree';
+}
+
+
+.conditions-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 99%;
+    font-family: 'Figtree';
+}
+
+.conditions-main-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    text-align: left;
+    height: auto;
+    flex-grow: 1;
+    margin: 2% 0.5%;
+    line-height: 1.25;
+    position: relative;
+    z-index: 999999;
+}
+
+.conditions-main-top h2 {
+    width: 100%;
+    max-width: 99%;
+    font-weight: 400;
+    font-size: 5em;
+    color: #fff;
+}
+
+.conditions-main-top p {
+    width: 100%;
+    max-width: 99%;
+    color: #1d1c28;
+    color: #fff;
+}
+
+#currentTemp {
+    font-size: 5em;
+    font-weight: 400;
+    margin: 0.5%;
+}
+
+#currentText {
+    font-size: 4em;
+    font-weight: 300;
+    margin: 0.5%;
+}
+
+.conditions-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    height: auto;
+    max-width: 99%;
+    flex-wrap: wrap;
+}
+
+.wx-icon {
+    width: auto;
+    max-width: 99%;
+    color: #1d1c28;
+    color: #fff;
+    position: absolute;
+    z-index: 4000;
+    right: 0%;
+    top: 10%;
+}
+
+.conditions-location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.location-text {
+    width: 100%;
+    text-align: left;
+    height: auto;
+}
+
+.location-text h2 {
+    font-weight: 400;
+    font-size: 3em;
+    margin: 0.5%;
+    width: auto;
+}
+
+.location-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 100%;
+    width: auto;
+    color: #fff;
+}
+
+
+/* --
+addl conditions
+---- */
+
+.card-border {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    text-align: left;
+    height: auto;
+    width: 100%;
+    max-width: 99%;
+    margin: 0.5%;
+    line-height: 1.25;
+    color: #1d1c28;
+    color: #fff;
+    max-height: 99%;
+    margin: 1% 0%;
+    /*      box-shadow: 0 1px 3px rgba(75, 75, 75, 0.318); */
+}
+
+.conditions-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    max-width: 98%;
+    margin: 1% 0%;
+    max-height: 99%;
+    
+}
+
+.conditions-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    height: auto;
+    width: 100%;
+    margin: 0.5% 1%;
+    font-family: 'Figtree';
+}
+
+.conditions-item p {
+    width: auto;
+    height: auto;
+    text-align: left;
+    margin: 0.5%;
+    flex-grow: 1;
+    color: #0f0f0f;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.5em;
+    font-weight: 300;
+    width: auto;
+    margin: 0.5% 1.5%;
+}
+
+.conditions-item-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5%;
+    width: auto;
+    color: #0f0f0f;
+    color: #fff;
+}
+
+.sun-times {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    height: auto;
+    width: 100%;
+    margin: 0.5% 1%;
+}
+
+.sun-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    height: 90%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5%;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    margin: 0.5% 1%;
+    max-width: 100%;
+    color: #252525;
+    color: #fff;
+}
+
+.sun-times p {
+    width: 100%;
+    max-width: 99%;
+    margin: 0.5% 1%;
+    align-self: center;
+    font-size: 1.25em;
+    font-weight: 300;
+    font-size: 2.5em;
+    font-family: 'Figtree';
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin: 0.5% 1%;
+}
+
+.wx-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 1em;
+    width: 100%;
+}
+
+.conditions-temp {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    height: auto;
+    width: 100%;
+    max-width: 98%;
+    margin: 1% 0.5%;
+}
+
+.conditions-temp p {
+    font-weight: 400;
+    max-width: 98%;
+    text-align: left;
+    width: 100%;
+    font-size: 15vw;
+    max-width: 99%;
+}
+
+.conditions-desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    max-width: 99%;
+    margin: 1% 0.5%;
+    font-size: 3em;
+}
+
+.conditions-desc p {
+    font-weight: 400;
+    width: 100%;
+    max-width: 99%;
+    text-align: left;
+}
+
+/* --- --- --- --- --- ---
+\\  ADDL DATA
+--- --- --- --- --- --- */
+/* --
+hourly forecast cards
+--- */
+.conditions-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+}
+
+.addl-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 99%;
+    height: 40vh;
+    margin: 0.5%;
+    text-align: left;
+    margin-top: 1%;
+    position: relative;
+    z-index: 99999;
+    font-family: 'Figtree';
+}
+
+
+/* --- --- --- --- --- ---
+\\  HOURLY
+--- --- --- --- --- --- */
+.hourly-row {
+    display: flex;
+    flex-direction: column;
+    flex: 0 89%;
+    width: auto;
+    margin: 0.5%;
+    flex-wrap: wrap;
+    z-index: 9999999999;
+    color: #1d1c28;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 99%;
+    max-height: 100%;
+    margin: 0.5%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 80000;
+    background-color: #fdfcf720;
+    backdrop-filter: blur(2px);
+}
+
+
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    width: 49%;
+    max-width: auto;
+    height: 300px;
+    margin: 1% 0;
+    color: #1d1c28;
+    background-color: #141522;
+    max-height: 99%;
+    color: #fff;
+    font-family: 'Figtree';
+    box-shadow: 0 1px 3px 1px rgba(75, 75, 75, 0.110);
+}
+
+.forecast-card-time {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    margin: 0.5%;
+    font-size: 1.75em;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.forecast-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: auto;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.forecast-card-conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    margin: 0.5%;
+    font-size: 1.75em;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.forecast-card-conditions p {
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+
+/* --- --- --- --- --- ---
+\\  NO LOCATION
+--- --- --- --- --- --- */
+.no-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsl(220, 100%, 99%);
+    filter: none;
+    height: 100vh;
+    margin: 0.5% 0%;
+    font-family: 'Roboto';
+}
+
+.no-location-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 80%;
+    text-wrap: wrap;
+    height: 300px;
+    max-width: 100%;
+    font-size: 3em;
+    font-weight: 300;
+    color: #252525;
+
+}
+
+/* --- --- --- --- --- ---
+\\  HEADER / FOOTER
+--- --- --- --- --- --- */
+header {
+    height: 150px;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    background-color: #101415;
+    background-color: #141522;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 99%;
+    width: auto;
+    height: auto;
+    color: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: auto;
+    height: auto;
+    flex-grow: 1;
+    position: relative;
+    max-width: 100%;
+    z-index: 99999;
+}
+
+.header-title {
+    width: 100%;
+    max-width: 99%;
+    text-wrap: wrap;
+    position: relative;
+    height: 100%;
+    margin-top: 5%;
+    align-self: center;
+    z-index: 999999;
+}
+
+.header-title h1 {
+    font-size: 3em;
+    font-weight: 300;
+    height: auto;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 400;
+    max-width: 99%;
+    text-align: left;
+    position: relative;
+    top: 5%;
+    z-index: 999999;
+}
+
+.header-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    max-width: 20%;
+    margin: 0%;
+    right: 5%;
+    top: 30%;
+    position: absolute;
+    z-index: 4000;
+    background-color: transparent;
+}
+
+.header-logo img {
+    height: 80px;
+    width: 80px;
+
+}
+
+
+
+
+
+footer {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: hsl(220, 100%, 99%);
+    background-color: #141522;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    color: #fff;
+    font-family: 'Figtree', sans-serif;
+}
+
+.footer-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    flex-grow: 1;
+    margin: 1%;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    margin: 1%;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    max-width: 20%;
+    margin: 0%;
+}
+
+.footer-logo img {
+    height: 80px;
+    width: 80px;
+    width: auto;
+}
+
+.footer-title {
+    width: 100%;
+}
+
+.footer-title h3 {
+    font-size: 1em;
+    font-weight: 300;
+    height: auto;
+}
+
+.footer-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 100%;
+    width: 100%;
+}
+
+.footer-text p,
+.footer-text h3,
+.footer-text a {
+    width: 100%;
+    max-width: 100%;
+    font-weight: 400;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+
+/* - - - - - - - - - - 
+| | BREAKPOINTS
+- - - - - - - - - -  */
+
+@media only screen and (orientation: landscape) {
+
+    .search-component {
+        top: 5%;
+    }
+
+    .addl-data {
+        height: auto;
+    }
+
+    .location-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        height: auto;
+        width: auto;
+        flex-grow: 1;
+        margin: 2% 0.5%;
+        width: 100%;
+    }
+
+    .location-text h2 {
+        font-weight: 300;
+        font-size: 5em;
+        text-align: left;
+        margin: 0.5%;
+        width: 100%;
+        max-width: 99%
+    }
+}
+
+@media only screen and (min-width: 780px) {
+
+    .search-component {
+        top: 25%;
+        width: 100%;
+        z-index: 99999999;
+    }
+
+    .search-inputs input {
+        max-width: 49%;
+    }
+
+    .header-main {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1%;
+
+    }
+
+    .header-title {
+        margin-top: 0%;
+    }
+
+    .header-title h1 {
+        font-size: 2.5em;
+        font-weight: 300;
+        height: auto;
+        font-family: 'Figtree', sans-serif;
+        max-width: 99%;
+        text-align: left;
+        position: relative;
+
+        z-index: 999999;
+    }
+
+    .header-logo {
+        right: 85%;
+        top: 95%;
+        margin-top: 0.5%;
+        max-height: 90%;
+        width: 100%;
+    }
+
+    .header-logo img {
+        height: 70px;
+        width: 70px;
+    }
+
+
+
+
+    /* -------------------
+| Current Conditions
+---------------------- */
+
+
+    .main-weather {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        max-height: 99%;
+        width: 100%;
+        max-width: 99%;
+        margin: 0.5% 0%;
+        position: relative;
+        z-index: 9999;
+        backdrop-filter: blur(2px);
+        background-color: #6767675b;
+        color: #1d1c28;
+        border-radius: 5px;
+    }
+
+    .img-container {
+        width: 100%;
+        max-width: 98%;
+        height: 100%;
+        max-height: 98%;
+        position: absolute;
+        z-index: 6000;
+        top: 1%;
+        left: 1%;
+    }
+
+    .img-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .conditions-main-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+        text-align: left;
+        height: auto;
+        width: 100%;
+        max-width: 99%;
+        margin: 2% 0.5%;
+        line-height: 1.25;
+        position: unset;
+    }
+
+    .wx-icon {
+        width: 100%;
+        max-width: 99%;
+        color: #1d1c28;
+        color: #fff;
+        position: unset;
+
+    }
+
+    #currentTemp {
+        font-size: 5em;
+        font-weight: 400;
+
+    }
+
+    #currentText {
+        font-size: 5em;
+        font-weight: 300;
+
+    }
+
+    .conditions-current {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 100%;
+        max-width: 99%;
+        height: auto;
+        margin: 1% 0%;
+        color: #fff;
+    }
+
+    .conditions-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        max-width: 99%;
+        flex-grow: 1;
+        max-height: 99%;
+    }
+
+    .conditions-item {
+        width: 100%;
+        max-width: 49%;
+        margin: 1% 0.5%;
+        justify-content: flex-start;
+    }
+
+    .conditions-item p {
+        font-size: 2em;
+        font-weight: 400;
+        width: auto;
+        flex-grow: 1;
+        width: 100%;
+        text-align: left;
+        margin-left: 5%;
+        min-width: none;
+    }
+
+    .show-btn button {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+
+    /* --- --- --- --- --- ---
+\\  HOURLY
+--- --- --- --- --- --- */
+    .forecast-card {
+        width: 30%;
+    }
+
+    .forecast-card-conditions {
+        font-size: 2em;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .forecast-card-conditions p {
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+
+
+}
+
+
+@media only screen and (min-width: 920px) {
+
+    .main-weather {
+        position: relative;
+        z-index: 9999;
+        backdrop-filter: none;
+        background-color: none;
+        color: #1d1c28;
+        border-radius: 5px;
+    }
+
+    .conditions-bg {
+        backdrop-filter: blur(2px);
+    }
+
+    .img-container {
+        height: 69%;
+        width: 70%;
+        top: 1%;
+        left: 29%;
+        z-index: 8000;
+    }
+
+    .header-logo {
+        right: 87%;
+        top: 95%;
+        margin-top: 0.5%;
+        max-height: 90%;
+        width: 100%;
+    }
+
+    .header-logo img {
+        height: 70px;
+        width: 70px;
+    }
+
+}
+
+
+@media only screen and (min-width: 1199) {
+
+    .search-component {
+        width: 100%;
+        max-width: 80%;
+        top: 25%;
+        z-index: 99999999;
+        margin: 0 auto;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    .header-logo {
+        right: 87%;
+        top: 95%;
+        margin-top: 0.5%;
+        max-height: 90%;
+        width: 100%;
+    }
+
+    .header-logo img {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+    .img-container {
+        height: 69%;
+        width: 70%;
+        top: 25%;
+        left: 29%;
+    }
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .search-component {
+        top: 25%;
+        width: 100%;
+        z-index: 99999999;
+    }
+
+    .header-logo {
+        right: 87%;
+        top: 95%;
+        margin-top: 0.5%;
+        max-height: 90%;
+        width: 100%;
+    }
+
+    .header-logo img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .container {
+        max-width: 98%;
+    }
+
+    .img-container {
+        height: 69%;
+        width: 70%;
+        top: 2%;
+        left: 29%;
+    }
+
+}
+
+
+@media only screen and (min-width: 1699px) {
+
+    .search-component {
+        top: 20%;
+        width: 100%;
+        z-index: 99999999;
+    }
+
+    .container {
+        max-width: 80%;
+    }
+
+    .img-container {
+        height: 59%;
+        width: 59%;
+        top: 2%;
+        left: 40%;
+    }
+
+}
