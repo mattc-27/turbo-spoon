@@ -31,7 +31,19 @@ app.get('/api/weather/:searchUrl', async (req, res) => {
   } catch (error) {
     console.error(error.message)
   }
-})
+});
+
+app.get(`/api/air-quality`, async (req, res) => {
+  const { lat, lon } = req.query;
+  try {
+      const response = await fetch(`http://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lon}&key=${process.env.IQAIR_API_KEY}`);
+      const data = await response.json();
+      res.send(data)
+      console.log(data)
+  } catch (error) {
+      console.error(error.message)
+  }
+});
 
 // Setup default port
 app.set('port', process.env.PORT || 9000);

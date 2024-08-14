@@ -20,7 +20,7 @@ export default function Layout() {
 
     useEffect(() => {
 
-        const loadingMsg = getRandomItem(WeatherPuns.messages);
+        const loadingMsg = getRandomItem(WeatherPuns.messages)
 
         const fetchData = async () => {
             try {
@@ -40,10 +40,6 @@ export default function Layout() {
                             fontWeight: '500',
                             textAlign: 'center',
                         },
-                        success: {
-                            duration: 2000,
-                            icon: null
-                        },
                     },
                 )
                 // set weather data
@@ -52,12 +48,13 @@ export default function Layout() {
                 await getBackground(response)
 
             } catch (error) {
-                console.error(error.message)
+                console.log(error)
             }
         }
         fetchData()
             .catch(console.error);
     }, [query]);
+
 
 
     function Loading() {
@@ -79,7 +76,9 @@ export default function Layout() {
             }} />
             <Suspense fallback={<Loading />}>
                 {currentConditions && background ?
+                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                     <CurrentWeather background={background} />
+                    </div>
                     : <div className='container'>
                         <div className='no-location'>
                             <div className='no-location-msg'>
