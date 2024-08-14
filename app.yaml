@@ -1,0 +1,21 @@
+runtime: nodejs18
+env: standard
+instance_class: F1
+handlers:
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+  - url: .*
+    script: auto
+  - url: .*
+    script: auto
+  - url: .*
+    script: auto
+  - url: .*
+    script: auto
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+service_account: weather-app-v2-389417@appspot.gserviceaccount.com

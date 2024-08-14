@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineGithub } from 'react-icons/ai';
-import logoA from '../../logoA.png';
+import weatherWhaleLogo1 from '../../assets/weatherWhaleLogo1.png';
 export function Footer() {
 
     return (
@@ -13,7 +13,7 @@ export function Footer() {
                             <h3>weatherwhale.cloud</h3></a>
                     </div>
                     <div className='footer-logo'>
-                        <img src={logoA}
+                        <img src={weatherWhaleLogo1}
                         />
                     </div>
                 </div>

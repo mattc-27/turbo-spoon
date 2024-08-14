@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import logoB from '../../logoB.png';
+import weatherWhaleLogo2 from '../../assets/weatherWhaleLogo2.png';
+
+
 
 export function SearchComponent({ setQuery }) {
 
@@ -53,7 +55,7 @@ export function SearchComponent({ setQuery }) {
                     </div>
                     <div className='header-logo'>
                         <img
-                            src={logoB} />
+                            src={weatherWhaleLogo2} />
                     </div>
                 </div>
                 <Toaster containerStyle={{
