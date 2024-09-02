@@ -8,7 +8,7 @@ import { Footer } from './components/Footer';
 import { WeatherContext } from './WeatherContext';
 import { getWeatherData, getRandomItem } from './weatherServices';
 import { WeatherPuns } from './data.js';
-
+import ReactGA from 'react-ga4';
 const CurrentWeather = lazy(() => import('./CurrentWeather'))
 
 export default function Layout() {
@@ -52,10 +52,18 @@ export default function Layout() {
             }
         }
         fetchData()
+
             .catch(console.error);
     }, [query]);
 
 
+    useEffect(() => {
+        ReactGA.event({
+            category: 'Weather query',
+            action: 'Fetched weather',
+            label: currentConditions.location
+        })
+    }, [currentConditions])
 
     function Loading() {
         return (
@@ -64,7 +72,6 @@ export default function Layout() {
             </div>
         );
     }
-
 
     return (
         <div>
@@ -76,8 +83,8 @@ export default function Layout() {
             }} />
             <Suspense fallback={<Loading />}>
                 {currentConditions && background ?
-                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                    <CurrentWeather background={background} />
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <CurrentWeather background={background} />
                     </div>
                     : <div className='container'>
                         <div className='no-location'>

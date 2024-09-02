@@ -87,6 +87,7 @@ search component
     color: #484c4d;
 }
 
+
 /* -------------
 main weather
 ---------------- */
@@ -103,7 +104,6 @@ main weather
     background-color: hsl(220, 100%, 99%);
     font-family: 'Lato', sans-serif;
 }
-
 
 
 /* -------------------
@@ -174,34 +174,55 @@ main weather
 
 .conditions-main {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
-    flex-grow: 1;
-    margin: 1.5% 0%;
+    height: 360px;
 }
 
 .conditions-main-top {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: space-evenly;
+    align-items: flex-end;
     height: 100%;
-    width: auto;
-    flex-grow: 1;
-    margin: 2% 0.5%;
-    line-height: 1.25;
+    width: 59;
 }
 
-.conditions-main-top h2 {
+.current-top-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: auto;
+}
+
+.conditions-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+}
+
+.conditions-text p {
     width: 100%;
     max-width: 99%;
-    font-weight: 400;
-    font-size: 4em;
-    color: #1d1c28;
     color: #fff;
+}
+
+#currentTemp {
+    font-size: 5em;
+    font-weight: 400;
+    margin: 0.5%;
+}
+
+#currentText {
+    font-size: 3em;
+    font-weight: 300;
+    margin: 0.5%;
 }
 
 .conditions-main-top p {
@@ -211,84 +232,39 @@ main weather
     color: #fff;
 }
 
-#currentTemp {
-    font-size: 4em;
-    font-weight: 400;
-    margin: 0.5%;
-}
 
-#currentText {
-    font-size: 2.5em;
-    font-weight: 300;
-    margin: 0.5%;
-}
-
-.current-top-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    max-width: 80%;
-}
-
-
-
-.conditions-location {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: auto;
-    width: 100%;
-}
-
-.location-text {
-    width: 100%;
-    text-align: left;
-    height: auto;
+/* icon, aqi */
+.wx-icon {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-    height: auto;
-    width: auto;
-    flex-grow: 1;
-    margin: 2% 0.5%;
-    width: 100%;
-}
-
-.location-text h2 {
-    font-weight: 300;
-    font-size: 2.75em;
-    margin: 0.5%;
-    width: 100%;
-}
-
-.location-icon,
-#locationIcon {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    height: auto;
-    width: auto;
-    color: #1d1c28;
-    color: #fff;
-    height: 40px;
-    align-self: center;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
 }
 
 
 .air-quality {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+.icon-card {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    flex-grow: 1;
+    justify-content: space-evenly;
+    height: 100%;
+    max-height: 80%;
+    max-width: 80%;
+    width: 100%;
     margin: 0.5%;
+    border-radius: 10px;
 }
 
 .aq-card {
@@ -296,8 +272,11 @@ main weather
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 100px;
-    width: 70%;
+    height: 100%;
+    max-height: 80%;
+    max-width: 80%;
+    width: 100%;
+    margin: 0.5%;
     border-radius: 10px;
 }
 
@@ -306,10 +285,8 @@ main weather
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 0.5% 2.5%;
     width: 100%;
     flex-grow: 1;
-    color: #fff;
     font-weight: 600;
 }
 
@@ -321,27 +298,64 @@ main weather
 }
 
 .aq-card-data p {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 400;
     text-align: center;
     margin: 0.5% 0%;
 }
 
 #aqi {
-    font-size: 0.75em;
+    font-size: 1em;
 }
 
-.wx-icon {
+
+/* --- 
+Location
+--- --- --- */
+.conditions-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.location-text {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    flex-grow: 1;
+    height: auto;
     width: 100%;
-    color: #f6ee67;
-    color: #fff;
+    flex-grow: 1;
+    margin: 0%;
+    width: 100%;
 }
 
+.location-text h2 {
+    font-weight: 300;
+    font-size: 4em;
+    margin: 0.5%;
+    width: 100%;
+    text-align: left;
+}
 
+.location-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    color: #fff;
+    height: 100%;
+    align-self: center;
+}
+
+#locationIcon {
+    height: 35px;
+    margin-bottom: 15%;
+}
 
 
 /* --
@@ -356,10 +370,8 @@ addl conditions
     text-align: left;
     height: auto;
     width: 100%;
-    max-width: 90%;
     margin: 0.5%;
     line-height: 1.25;
-    color: #1d1c28;
     color: #fff;
     margin: 1% 0%;
     /*      box-shadow: 0 1px 3px rgba(75, 75, 75, 0.318); */
@@ -368,7 +380,7 @@ addl conditions
 .conditions-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: auto;
     width: 100%;
@@ -383,30 +395,25 @@ addl conditions
     flex-grow: 1;
     height: auto;
     width: 100%;
-    margin: 0.5% 1%;
+    margin: 0.5%;
 }
 
 .conditions-item p {
+    flex-grow: 1;
     height: auto;
     width: 100%;
-    text-align: right;
     margin: 0.5% 1.5%;
-    flex-grow: 1;
-    color: #0f0f0f;
-    color: #fff;
-    font-weight: 300;
+    text-align: left;
+    font-weight: 400;
     font-size: 1.5em;
+    color: #fff;
 }
 
 .conditions-item-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
     flex-grow: 1;
     text-align: left;
-    color: #0f0f0f;
+    margin-right: 2%;
+    margin-left: 0.5%;
     color: #fff;
 }
 
@@ -826,8 +833,6 @@ footer {
     color: #fff;
     font-size: 0.8em;
 }
-
-
 /* - - - - - - - - - - 
 | | BREAKPOINTS
 - - - - - - - - - -  */
@@ -865,7 +870,7 @@ footer {
     }
 }
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 760px) {
 
     .search-component {
         top: 25%;
@@ -913,6 +918,9 @@ footer {
 
 
 
+    .chart-container {
+        background-color: #141522;
+    }
 
     /* -------------------
 | Current Conditions
@@ -958,7 +966,7 @@ footer {
         justify-content: center;
         align-items: center;
         align-self: center;
-        max-width: 85%;
+        max-width: 98%;
         width: 100%;
         height: auto;
         margin: 1% 0%;
@@ -968,57 +976,125 @@ footer {
     .conditions-main {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        max-width: 92.5%;
+        max-width: 99%;
         width: 100%;
     }
 
     .conditions-main-top {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-        height: auto;
-        width: auto;
-        margin: 2.5%;
-        line-height: 1.25;
-    }
-
-    #currentTemp {
-        font-size: 7em;
-        font-weight: 400;
-    }
-
-    #currentText {
-        font-size: 4em;
-        font-weight: 300;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        height: 100%;
+        width: 100%;
+        max-width: 39%;
     }
 
     .current-top-col {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: left;
-        height: auto;
-        width: auto;
-        margin: 2.5%;
-        line-height: 1.25;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+        width: 100%;
+        max-width: 39%;
     }
 
-    .wx-icon {
-        flex-grow: 1;
-        color: #1d1c28;
+    .conditions-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .conditions-text p {
+        width: 100%;
+        max-width: 99%;
         color: #fff;
     }
 
-    .conditions-location {
+    #wxIcon {
+        margin: 0.5%;
+        width: 100%;
+    }
+
+    #currentText {
+        font-size: 2em;
+        font-weight: 300;
+        margin: 0.5%;
+        text-align: left;
+        width: 100%;
+    }
+
+    #currentTemp {
+        font-size: 5em;
+        font-weight: 400;
+        margin: 0.5%;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* icon, aqi */
+    .wx-icon {
+        display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        max-width: 97.5%;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        max-width: 90%;
+        height: 100%;
+        flex-grow: 1;
+    }
+    .icon-card {
+        height: 100%;
+        max-height: 60%;
+        max-width: 60%;
+        width: 100%;
+    }
+
+    .air-quality {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        max-width: 90%;
+        height: 100%;
+    }
+
+    .aq-card {
+        height: 100%;
+        max-height: 60%;
+        max-width: 60%;
+        width: 100%;
+    }
+
+    .aq-card-data {
+        width: 100%;
+        flex-grow: 1;
+        font-weight: 600;
+    }
+
+    /* 
+    .aq-card-text {
+    }
+    .aq-card-data p {
+    }*/
+
+
+
+    /* --- 
+Location
+--- --- --- */
+    .conditions-location {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
         width: 100%;
     }
 
@@ -1026,87 +1102,54 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        align-items: flex-start;
-        text-align: left;
-        height: auto;
-        flex-grow: 1;
+        align-items: center;
+        height: 100%;
         width: 100%;
-        margin: 0.5%;
     }
 
     .location-text h2 {
+        width: 100%;
+        max-width: 99%;
         font-weight: 400;
         font-size: 5em;
-        text-align: left;
-        margin: 0.5%;
+        color: #fff;
+    }
+
+    .location-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: auto;
+        color: #fff;
+        height: 100%;
+        align-self: center;
     }
 
     #locationIcon {
-        align-self: center;
-        flex-grow: 1;
+        height: 50px;
     }
 
 
-    .air-quality {
-        width: auto;
-        flex-grow: 1;
-        width: 35%;
-        margin: 0.5%;
-    }
-
-    .aq-card {
-        height: 100px;
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .aq-card-data {
-        flex-direction: column;
-    }
-
-    .aq-card-data p {
-        font-size: 1.75em;
-        font-weight: 600;
-        text-align: center;
-        margin: 0.5% 1.5%;
-    }
-
-    .aq-card-text {
-        text-align: center;
-    }
-
+    /* other conditions */
     .conditions-row {
-        display: flex;
-        flex-direction: row;
         justify-content: space-evenly;
-        align-items: center;
-        height: auto;
-        flex-grow: 1;
+        width: 100%;
     }
 
     .conditions-item {
-        width: auto;
-        max-width: 49%;
-        margin: 1% 0.5%;
-        justify-content: flex-start;
+        width: 100%;
+        margin: 0.5%;
     }
 
     .conditions-item p {
-        font-size: 3em;
-        font-weight: 400;
-        width: auto;
-        flex-grow: 1;
-        width: 100%;
-        text-align: left;
-        margin-left: 5%;
+        margin-left: 1%;
         min-width: none;
+        text-align: left;
+        font-size: 2em;
+        font-weight: 400;
     }
 
-    .show-btn button {
-        font-size: 1.5em;
-        font-weight: 300;
-    }
 
     /* --- --- --- --- --- ---
 \\  HOURLY
@@ -1129,7 +1172,10 @@ footer {
 }
 
 
-@media only screen and (min-width: 920px) {
+
+
+
+@media only screen and (min-width: 980px) {
 
     .main-weather {
         position: relative;
@@ -1144,10 +1190,10 @@ footer {
     }
 
     .img-container {
-        height: 80%;
+        height: 90%;
         width: 80%;
-        top: 2%;
-        left: 19%;
+        top: 5%;
+        left: 10%;
     }
 
     .header-logo {
@@ -1198,10 +1244,10 @@ footer {
 @media only screen and (min-width: 1200px) {
 
     .img-container {
-        height: 80%;
+        height: 90%;
         width: 80%;
-        top: 2%;
-        left: 19%;
+        top: 5%;
+        left: 10%;
     }
 
 }
@@ -1232,10 +1278,13 @@ footer {
     }
 
     .img-container {
-        height: 80%;
+        height: 90%;
         width: 80%;
-        top: 2%;
-        left: 19%;
+        top: 5%;
+        left: 10%;
+    }
+    .conditions-current {
+        max-width: 80%;
     }
 
 }
@@ -1254,13 +1303,15 @@ footer {
     }
 
     .img-container {
-        height: 80%;
+        height: 90%;
         width: 80%;
-        top: 2%;
-        left: 19%;
+        top: 5%;
+        left: 10%;
     }
 
 }
+
+/* misc styles */
 
 
 .page-nav {

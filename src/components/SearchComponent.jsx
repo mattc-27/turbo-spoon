@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import weatherWhaleLogo2 from '../../assets/weatherWhaleLogo2.png';
-
+import ReactGA from 'react-ga4';
 
 
 export function SearchComponent({ setQuery }) {
@@ -34,6 +34,11 @@ export function SearchComponent({ setQuery }) {
                 const queryVariable = `${location.lat()},${location.lng()}`;
                 console.log(queryVariable);
                 setQuery({ q: queryVariable });
+                ReactGA.event({
+                    category: 'Search',
+                    action: 'Location search',
+                    label: query.q,
+                })
                 clearInput();
             }
         });
